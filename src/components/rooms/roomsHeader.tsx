@@ -25,7 +25,7 @@ const RoomsHeader = () => {
             </TooltipTrigger>
           </Tooltip>
 
-          <DialogContent>
+          <DialogContent className="overflow-y-scroll max-h-screen">
             <AddRoomForm />
           </DialogContent>
         </TooltipProvider>

@@ -25,7 +25,7 @@ const customersHeader = () => {
             </TooltipTrigger>
           </Tooltip>
 
-          <DialogContent>
+          <DialogContent className="overflow-y-scroll max-h-screen">
             <AddCustomerForm />
           </DialogContent>
         </TooltipProvider>

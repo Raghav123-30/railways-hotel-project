@@ -22,9 +22,10 @@ const AddRoomForm = () => {
         <Input></Input>
       </div>
       <div className="space-y-1">
+        <label>Availability</label>
         <Select>
           <SelectTrigger>
-            <SelectValue placeholder="Availability" />
+            <SelectValue placeholder="Select an option" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -39,9 +40,10 @@ const AddRoomForm = () => {
         </Select>
       </div>
       <div className="space-y-1">
+        <label>Cleaning status</label>
         <Select>
           <SelectTrigger>
-            <SelectValue placeholder="Cleaning status" />
+            <SelectValue placeholder="Select an option" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>

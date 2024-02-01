@@ -25,7 +25,7 @@ const EmployeesHeader = () => {
             </TooltipTrigger>
           </Tooltip>
 
-          <DialogContent>
+          <DialogContent className="overflow-y-scroll max-h-screen">
             <AddEmployeeForm />
           </DialogContent>
         </TooltipProvider>

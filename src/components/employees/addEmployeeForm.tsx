@@ -52,6 +52,7 @@ const AddEmployeeForm = () => {
         <Input></Input>
       </div>
       <div className="space-y-1">
+        <label>Job</label>
         <Select>
           <SelectTrigger>
             <SelectValue placeholder="Select a job" />
