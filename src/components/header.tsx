@@ -8,16 +8,12 @@ import { routes } from "@/constants/routes";
 import { Button } from "./ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import Menu from "./menu";
+import ToggleTheme from "./toggleTheme";
 const Header = () => {
-  const router = useRouter();
-  const { theme, setTheme } = useTheme();
-  const toggleTheme = () => {
-    theme == "light" ? setTheme("dark") : setTheme("light");
-  };
   const [mounted, setMounted] = useState(false);
   const [isPublicPath, setIsPublicPath] = useState(false);
   const path = usePathname();
-  const isLightTheme = theme === "light";
+
   useEffect(() => {
     if (path === routes.LOGINPAGE) {
       setIsPublicPath(true);
@@ -45,13 +41,7 @@ const Header = () => {
         <Link href={routes.CUSTOMERSPAGE}>Customers</Link>
         <Link href={routes.ROOMSPAGE}>Rooms</Link>
         <Button variant="outline">Logout</Button>
-        <button onClick={toggleTheme}>
-          {isLightTheme ? (
-            <MdSunny size={24}></MdSunny>
-          ) : (
-            <IoMdMoon size={24}></IoMdMoon>
-          )}
-        </button>
+        <ToggleTheme />
       </div>
       <div className="flex items-center md:hidden">
         <Menu />

@@ -1,7 +1,7 @@
 import React from "react";
 
-const page = () => {
-  return <div>page</div>;
+const EditRoomPage = () => {
+  return <div>Edit room page</div>;
 };
 
-export default page;
+export default EditRoomPage;

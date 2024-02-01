@@ -28,9 +28,15 @@ const Menu = () => {
           <Card className="p-8">
             <CardContent className="flex flex-col gap-2 justify-center items-center">
               <ToggleTheme />
-              <Link href={routes.EMPLOYEESPAGE}>Employees</Link>
-              <Link href={routes.CUSTOMERSPAGE}>Customers</Link>
-              <Link href={routes.ROOMSPAGE}>Rooms</Link>
+              <Link href={routes.EMPLOYEESPAGE} onClick={closeMenu}>
+                Employees
+              </Link>
+              <Link href={routes.CUSTOMERSPAGE} onClick={closeMenu}>
+                Customers
+              </Link>
+              <Link href={routes.ROOMSPAGE} onClick={closeMenu}>
+                Rooms
+              </Link>
               <Button variant="outline">Logout</Button>
             </CardContent>
           </Card>

@@ -12,7 +12,7 @@ datasource db {
 
 model Customer {
   customerId Int @id @default(autoincrement())
-  phoneNumber String 
+  phone String 
   fullName String
   gender String
   country String
@@ -26,10 +26,10 @@ model Customer {
 
 model Room {
   roomNumber Int @id @default(autoincrement())
-  available String
-  cleanCombo String 
+  availability String
+  cleaningStatus String 
   price String
-  typeCombo String
+  bedType String
   customers Customer?
   checkout Checkout?
 }
@@ -37,10 +37,12 @@ model Room {
 model Employee {
   employeeId Int @id @default(autoincrement())
   fullName String
+  job String
+  gender String
   age String
   salary String
-  phoneNumber String
-  adharNumber String
+  phone String
+  adhar String
   email String
 }
 
