@@ -26,8 +26,10 @@ const Menu = () => {
       {isMenuEnabled && (
         <div className="absolute top-12 right-0 z-40">
           <Card className="p-8">
-            <CardContent className="flex flex-col gap-2 justify-center items-center">
-              <ToggleTheme />
+            <CardContent className="flex flex-col gap-2 justify-center items-start">
+              <div className="self-center">
+                <ToggleTheme />
+              </div>
               <Link href={routes.EMPLOYEESPAGE} onClick={closeMenu}>
                 Employees
               </Link>
@@ -37,7 +39,7 @@ const Menu = () => {
               <Link href={routes.ROOMSPAGE} onClick={closeMenu}>
                 Rooms
               </Link>
-              <Button variant="outline">Logout</Button>
+              <Button>Logout</Button>
             </CardContent>
           </Card>
         </div>

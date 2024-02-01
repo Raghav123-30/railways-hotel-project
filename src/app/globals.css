@@ -63,5 +63,5 @@
 }
 
 a {
-  @apply uppercase;
+  @apply uppercase text-rose-500;
 }

@@ -31,7 +31,7 @@ const Header = () => {
       <div>
         <Link
           href={routes.HOME}
-          className="font-bold text-lg border-b-2 border-slate-900 dark:border-white uppercase pb-2"
+          className="text-rose-500 italic font-bold text-lg border-b-2 border-rose-500  uppercase pb-2"
         >
           Dashboard
         </Link>
@@ -40,7 +40,7 @@ const Header = () => {
         <Link href={routes.EMPLOYEESPAGE}>Employees</Link>
         <Link href={routes.CUSTOMERSPAGE}>Customers</Link>
         <Link href={routes.ROOMSPAGE}>Rooms</Link>
-        <Button variant="outline">Logout</Button>
+        <Button>Logout</Button>
         <ToggleTheme />
       </div>
       <div className="flex items-center md:hidden">

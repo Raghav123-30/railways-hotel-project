@@ -17,9 +17,7 @@ const RoomsHeader = () => {
           <Tooltip>
             <TooltipTrigger>
               <DialogTrigger asChild>
-                <Button variant={"ghost"}>
-                  <PlusIcon className="w-6 h-6" />
-                </Button>
+                <PlusIcon className="w-6 h-6" />
               </DialogTrigger>
               <TooltipContent>
                 <p>Add new room</p>
