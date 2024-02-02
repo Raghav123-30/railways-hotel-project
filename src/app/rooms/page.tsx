@@ -11,9 +11,9 @@ import room from "@/models/room";
 const RoomsPage = async () => {
   let rooms: room[] = [];
   let errorFromServer = false;
+  const domain = process.env.PRODUCTION_URL || "";
+  const url = domain + "/api/rooms";
   try {
-    const domain = process.env.PRODUCTION_URL || "";
-    const url = domain + "/api/rooms";
     console.log(`url is ${url}`);
     const response = await axios.get(url);
     const { data } = await response.data;
@@ -25,6 +25,7 @@ const RoomsPage = async () => {
   return (
     <Card>
       <CardHeader>
+        <p>{url}</p>
         <div className="flex justify-end">
           <RoomsHeader />
         </div>
