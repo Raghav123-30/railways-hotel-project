@@ -13,7 +13,7 @@ const EmployeesPage = () => {
           <EmployeesHeader />
         </div>
       </CardHeader>
-      <CardContent className="flex gap-4">
+      <CardContent className="flex flex-col md:flex-row gap-4">
         <div className="flex-[1]">
           <EmplpoyeesFilter />
         </div>

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import RoomsHeader from "@/components/rooms/roomsHeader";
 import RoomsTable from "@/components/rooms/roomsTable";
@@ -20,7 +14,7 @@ const RoomsPage = () => {
           <RoomsHeader />
         </div>
       </CardHeader>
-      <CardContent className="flex gap-4">
+      <CardContent className="flex md:flex-row flex-col gap-4">
         <div className="flex-[1]">
           <RoomsFilter />
         </div>

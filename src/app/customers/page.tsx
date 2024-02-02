@@ -14,11 +14,11 @@ const CustomersPage = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardContent className="flex gap-4">
-          <div className="flex-[1]">
+        <CardContent className="flex flex-col md:flex-row gap-4">
+          <div className="flex-[1/2]">
             <CustomersFilter />
           </div>
-          <div className="flex-[2]">
+          <div className="flex-1">
             <CustomersSearch />
             <CustomersTable />
           </div>
