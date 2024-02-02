@@ -10,7 +10,9 @@ const HomePage = () => {
   const { toast } = useToast();
   const router = useRouter();
   const onLogOut = async () => {
-    const response = await axios.post("http://localhost:3000/api/users/logout");
+    const domain = process.env.PRODUCTION_URL || "";
+    const url = domain + "/api/users/logout";
+    const response = await axios.post(url);
     if (response.status == 200) {
       toast({
         title: "Goodbye",

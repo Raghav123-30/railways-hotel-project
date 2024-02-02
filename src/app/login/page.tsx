@@ -21,10 +21,9 @@ const LoginPage = () => {
   const { toast } = useToast();
   const onLogin = async () => {
     const body = {};
-    const response = await axios.post(
-      "http://localhost:3000/api/users/login",
-      body
-    );
+    const domain = process.env.PRODUCTION_URL || "";
+    const url = domain + "/api/users/login";
+    const response = await axios.post(url, body);
     if (response.status == 200) {
       toast({
         title: "Success",
