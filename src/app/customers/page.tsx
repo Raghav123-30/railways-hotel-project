@@ -1,23 +1,9 @@
-import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
 import CustomersHeader from "@/components/customers/customersHeader";
+import CustomersTable from "@/components/customers/customersTable";
+import CustomersSearch from "@/components/customers/customersSearch";
+import CustomersFilter from "@/components/customers/customersFilter";
 
 const CustomersPage = () => {
   return (
@@ -28,22 +14,15 @@ const CustomersPage = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableCaption>A list of all the customers.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">Fullname</TableHead>
-              <TableHead>Phone</TableHead>
-              <TableHead>Gender</TableHead>
-              <TableHead>Country</TableHead>
-              <TableHead>Room-number</TableHead>
-              <TableHead>Deposit</TableHead>
-              <TableHead className="text-right">Check-In time</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody></TableBody>
-          <TableFooter></TableFooter>
-        </Table>
+        <CardContent className="flex gap-4">
+          <div className="flex-[1]">
+            <CustomersFilter />
+          </div>
+          <div className="flex-[2]">
+            <CustomersSearch />
+            <CustomersTable />
+          </div>
+        </CardContent>
       </CardContent>
     </Card>
   );

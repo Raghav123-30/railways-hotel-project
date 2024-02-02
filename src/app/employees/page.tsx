@@ -1,23 +1,9 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import EmployeesHeader from "@/components/employees/employeesHeader";
+import EmployeesTable from "@/components/employees/employeesTable";
+import EmplpoyeesFilter from "@/components/employees/employeesFilter";
+import EmployeesSearch from "@/components/employees/employeesSearch";
 
 const EmployeesPage = () => {
   return (
@@ -27,25 +13,14 @@ const EmployeesPage = () => {
           <EmployeesHeader />
         </div>
       </CardHeader>
-      <CardContent>
-        <Table>
-          <TableCaption>A list of all the employees.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">Fullname</TableHead>
-              <TableHead>Age</TableHead>
-              <TableHead>Gender</TableHead>
-              <TableHead>Phone</TableHead>
-              <TableHead>Job</TableHead>
-              <TableHead>Email</TableHead>
-              <TableHead>Salary</TableHead>
-
-              <TableHead className="text-right">Adhar</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody></TableBody>
-          <TableFooter></TableFooter>
-        </Table>
+      <CardContent className="flex gap-4">
+        <div className="flex-[1]">
+          <EmplpoyeesFilter />
+        </div>
+        <div className="flex-[2]">
+          <EmployeesSearch />
+          <EmployeesTable></EmployeesTable>
+        </div>
       </CardContent>
     </Card>
   );

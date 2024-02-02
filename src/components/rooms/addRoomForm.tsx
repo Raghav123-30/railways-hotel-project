@@ -63,6 +63,7 @@ const AddRoomForm = () => {
         <Input></Input>
       </div>
       <div className="space-y-1">
+        <label>Combo</label>
         <Select>
           <SelectTrigger>
             <SelectValue placeholder="Bed type" />

@@ -5,19 +5,12 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+
 import RoomsHeader from "@/components/rooms/roomsHeader";
+import RoomsTable from "@/components/rooms/roomsTable";
+import RoomsFilter from "@/components/rooms/roomsFilter";
+import RoomsSearch from "@/components/rooms/roomsSearch";
 
 const RoomsPage = () => {
   return (
@@ -27,21 +20,14 @@ const RoomsPage = () => {
           <RoomsHeader />
         </div>
       </CardHeader>
-      <CardContent>
-        <Table>
-          <TableCaption>A list of rooms.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[200px]">Room number</TableHead>
-              <TableHead>Availability</TableHead>
-              <TableHead>Cleaning status</TableHead>
-              <TableHead>Price</TableHead>
-              <TableHead className="text-right">Bed type</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody></TableBody>
-          <TableFooter></TableFooter>
-        </Table>
+      <CardContent className="flex gap-4">
+        <div className="flex-[1]">
+          <RoomsFilter />
+        </div>
+        <div className="flex-[2]">
+          <RoomsSearch />
+          <RoomsTable></RoomsTable>
+        </div>
       </CardContent>
     </Card>
   );
