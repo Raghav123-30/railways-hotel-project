@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import getPrismaInstance from "@/models/getPrismaInstance";
 
-const prisma = getPrismaInstance();
+import prisma from "@/lib/prisma";
 export async function GET() {
   try {
     const data = await prisma.room.findMany();

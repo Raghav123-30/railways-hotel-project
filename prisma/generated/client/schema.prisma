@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+   output   = "./generated/client"
+}
+
+datasource db {
+    provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Customer {
+  customerId Int @id @default(autoincrement())
+  phone String 
+  fullName String
+  gender String
+  country String
+  roomNumber Int @unique
+  deposit String
+  checkInTime DateTime
+  checkout Checkout?
+  room Room @relation(fields: [roomNumber] ,references: [roomNumber])
+}
+
+
+model Room {
+  roomNumber Int @id @default(autoincrement())
+  availability String
+  cleaningStatus String 
+  price String
+  bedType String
+  customers Customer?
+  checkout Checkout?
+}
+
+model Employee {
+  employeeId Int @id @default(autoincrement())
+  fullName String
+  job String
+  gender String
+  age String
+  salary String
+  phone String
+  adhar String
+  email String
+}
+
+model Checkout {
+  checkoutId Int @id @default(autoincrement())
+  checkInTime DateTime
+  checkOutTime DateTime
+  roomNumber Int @unique
+  customerId Int @unique
+  customer Customer @relation(fields: [customerId], references: [customerId])
+  room Room @relation(fields: [roomNumber], references: [roomNumber])
+}
