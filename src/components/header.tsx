@@ -7,8 +7,26 @@ import { Button } from "./ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import Menu from "./menu";
 import ToggleTheme from "./toggleTheme";
+import { useToast } from "./ui/use-toast";
+import axios from "axios";
 
 const Header = () => {
+  const { toast } = useToast();
+  const router = useRouter();
+  const onLogOut = async () => {
+    const domain = process.env.PRODUCTION_URL || "";
+    const url = domain + "/api/users/logout";
+    const response = await axios.post(url);
+    if (response.status == 200) {
+      toast({
+        title: "Goodbye",
+        description: "See you soon",
+      });
+      setTimeout(() => {
+        router.push(routes.LOGINPAGE);
+      }, 2000);
+    }
+  };
   const [mounted, setMounted] = useState(false);
   const [isPublicPath, setIsPublicPath] = useState(false);
   const rightLinks = [
@@ -53,7 +71,7 @@ const Header = () => {
           </Link>
         ))}
 
-        <Button>Logout</Button>
+        <Button onClick={onLogOut}>Logout</Button>
         <ToggleTheme />
       </div>
       <div className="flex items-center md:hidden">

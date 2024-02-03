@@ -6,6 +6,9 @@ import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 import { routes } from "@/constants/routes";
 import ToggleTheme from "./toggleTheme";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { useToast } from "./ui/use-toast";
 const Menu = () => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
   const toggleMenu = () => {
@@ -13,6 +16,22 @@ const Menu = () => {
   };
   const closeMenu = () => {
     setIsMenuEnabled(false);
+  };
+  const { toast } = useToast();
+  const router = useRouter();
+  const onLogOut = async () => {
+    const domain = process.env.PRODUCTION_URL || "";
+    const url = domain + "/api/users/logout";
+    const response = await axios.post(url);
+    if (response.status == 200) {
+      toast({
+        title: "Goodbye",
+        description: "See you soon",
+      });
+      setTimeout(() => {
+        router.push(routes.LOGINPAGE);
+      }, 2000);
+    }
   };
   return (
     <div className="relative">
@@ -39,7 +58,7 @@ const Menu = () => {
               <Link href={routes.ROOMSPAGE} onClick={closeMenu}>
                 Rooms
               </Link>
-              <Button>Logout</Button>
+              <Button onClick={onLogOut}>Logout</Button>
             </CardContent>
           </Card>
         </div>
